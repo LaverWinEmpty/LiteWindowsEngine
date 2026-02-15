@@ -23,7 +23,7 @@ inline static constexpr uint64_t align(uint64_t in) noexcept {
         return 1;
     }
     in -= 1;
-    for(uint64_t i = 1; i < sizeof(uint64_t); i <<= 1) {
+    for(uint64_t i = 1; i < (sizeof(uint64_t) << 3); i <<= 1) {
         in |= in >> i;
     }
     return in + 1;
